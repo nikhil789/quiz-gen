@@ -241,6 +241,11 @@
 			<div id="but" onclick="set_question('msq')">SET QUESTION</div>
 		</div>
 	</div>
+
+	<div> 
+		<button onclick="pop_question()">Remove Question</button>
+	</div>
+
 	<div id="prev_container">
 		<div id="preview"></div>
 		<pre id="json"></pre>
@@ -280,6 +285,13 @@
 	function set_question(type) {
 		generate_preview(type);
 		generate_JSON(type);
+	}
+	
+	function pop_question() {
+		
+		DATA['questions'].pop();
+		generate_JSON();
+		
 	}
 	
 	function generate_preview(type) {
